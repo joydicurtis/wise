@@ -1,0 +1,335 @@
+@mixin align-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.laptop-container {
+  background: $white;
+  z-index: 1050;
+  text-align: center;
+  padding: 30px 0;
+  @include breakpoint(medium) {
+    padding: 120px 0;
+  }
+  @include breakpoint(large) {
+    position: absolute;
+    min-height: 600px;
+    top: 0;
+    right: 0;
+    left: 0;
+    right: 0;
+    transform: skewX(-10deg);
+    overflow: hidden;
+    padding: 0;
+  }
+  >* {
+    @include breakpoint(large) {
+      transform: skewX(10deg); 
+    }
+  } 
+}
+
+.laptop-red {
+  position: absolute;
+    width: 225px;
+    height: 150px;
+    background: url('../images/drupal.svg') red center no-repeat;
+    border: 7px solid $blue;
+    border-top: 10px solid $blue;
+    border-radius: 7px 7px 0 0;
+  transition: all .3s ease-in-out;
+  >* {
+    @include breakpoint(large) {
+      transform: skewX(10deg); 
+    }
+  } 
+}
+
+.laptop-item {
+    position: absolute;
+    display: inline-block;
+    width: 325px;
+    height: 160px;
+    top: 30%;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.laptop {
+    position: relative;
+    width: 225px;
+    height: 150px;
+    background: url('../images/drupal.svg') $white center no-repeat;
+    border: 7px solid $blue;
+    border-top: 10px solid $blue;
+    border-radius: 7px 7px 0 0;
+  &:before {
+    content: '';
+    bottom: -17px;
+    background: $blue;
+    height: 10px;
+    width: 270px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 0 1px #0070cf;
+    @include align-horizontal;
+  }
+  &:after {
+    content: '';
+    top: -6px;
+    width: 2px;
+    height: 2px;
+    background: $blue;
+    border-radius: 50%;
+    @include align-horizontal;
+  }
+}
+
+.laptop-red {
+   position: relative;
+    width: 225px;
+    height: 150px;
+    background: url('../images/magento.svg') $white center no-repeat;
+    border: 7px solid $orange;
+    border-top: 10px solid $orange;
+    border-radius: 7px 7px 0 0;
+    transition: all .3s ease-in-out;
+    top: 0;
+  &:before {
+    content: '';
+    bottom: -17px;
+    background:$orange;
+    height: 10px;
+    width: 270px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 0 1px $orange;
+    @include align-horizontal;
+  }
+  &:after {
+    content: '';
+    top: -6px;
+    width: 2px;
+    height: 2px;
+    background: $orange;
+    border-radius: 50%;
+    @include align-horizontal;
+  }
+}
+
+.laptop-green {
+  position: relative;
+    width: 225px;
+    height: 150px;
+    background: url('../images/js.svg') $white center no-repeat;
+    border: 7px solid $green;
+    border-top: 10px solid $green;
+    border-radius: 7px 7px 0 0;
+    transition: all .3s ease-in-out;
+    top: 0;
+  &:before {
+    content: '';
+    bottom: -17px;
+    background:$green;
+    height: 10px;
+    width: 270px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 0 1px $green;
+    @include align-horizontal;
+  }
+  &:after {
+    content: '';
+    top: -6px;
+    width: 2px;
+    height: 2px;
+    background: $green;
+    border-radius: 50%;
+    @include align-horizontal;
+  }
+}
+.tablet {
+    position: relative;
+    width: 90px;
+    height: 130px;
+    background: url('../images/drupal.svg') $white center no-repeat;
+    background-size: 80%;
+    border: 7px solid $blue;
+    border-top: 10px solid $blue;
+    border-radius: 7px;
+    border-bottom: 15px solid $blue;
+    top: -100px;
+    left: -30px;
+  &:before {
+    content: '';
+    bottom: -12px;
+    background: $white;
+    height: 10px;
+    width: 270px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translateX(-50%);
+  }
+  &:after {
+    content: '';
+    top: -6px;
+    width: 2px;
+    height: 2px;
+    background: $white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.tablet-red {
+    position: relative;
+    top: -100px;
+    left: -30px;
+    width: 90px;
+    height: 130px;
+    background: url('../images/magento.svg') $white center no-repeat;
+    background-size: 80%;
+    border: 7px solid $orange;
+    border-top: 10px solid $orange;
+    border-radius: 7px;
+    border-bottom: 15px solid $orange;
+    transition: all .3s ease-in-out;
+  &:before {
+    content: '';
+    bottom: -12px;
+    background: $white;
+    height: 10px;
+    width: 270px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translateX(-50%);
+  }
+  &:after {
+    content: '';
+    top: -6px;
+    width: 2px;
+    height: 2px;
+    background: $white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.tablet-green {
+    position: relative;
+    top: -100px;
+    left: -30px;
+    width: 90px;
+    height: 130px;
+    background: url('../images/html.svg') $white center no-repeat;
+    background-size: 80%;
+    border: 7px solid $green;
+    border-top: 10px solid $green;
+    border-radius: 7px;
+    border-bottom: 15px solid $green;
+    transition: all .3s ease-in-out;
+  &:before {
+    content: '';
+    bottom: -12px;
+    background: $white;
+    height: 10px;
+    width: 270px;
+    border-radius: 50%;
+    position: absolute;
+  
+    width: 8px;
+    height: 8px;
+    transform: translateX(-50%);
+  }
+  &:after {
+    content: '';
+    top: -6px;
+    width: 2px;
+    height: 2px;
+    background: $white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.mobile {
+  position: relative;
+      width: 55px;
+    height: 90px;
+    background: url('../images/drupal.svg') $white center no-repeat;
+    background-size: 80%;
+    border: 3px solid $blue;
+    border-radius: 7px;
+    top: -180px;
+    left: 30px;
+  &:after {
+content: '';
+    top: -1px;
+    width: 12px;
+    height: 3px;
+    background: $white;
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+.mobile-red {
+  position: relative;
+      width: 55px;
+    height: 90px;
+    background: url('../images/magento.svg') $white center no-repeat;
+    background-size: 80%;
+    border: 3px solid $orange;
+    border-radius: 7px;
+    top: -180px;
+    left: 30px;
+      transition: all .3s ease-in-out;
+  &:after {
+    content: '';
+    top: -1px;
+    width: 12px;
+    height: 3px;
+    background: $white;
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+.mobile-green {
+  position: relative;
+      width: 55px;
+    height: 90px;
+    background: url('../images/css.svg') $white center no-repeat;
+    background-size: 80%;
+    border: 3px solid $green;
+    border-radius: 7px;
+      top: -180px;
+    left: 30px;
+      transition: all .3s ease-in-out;
+  &:after {
+content: '';
+    top: -1px;
+    width: 12px;
+    height: 3px;
+    background: $white;
+    border-radius: 6px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}

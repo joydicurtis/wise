@@ -1,0 +1,275 @@
+//vars
+$content-width: 1220px;
+$content-width--small: 940px;
+$content-gutters: 25px;
+
+.siteSection {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.siteSection-teaser {
+    
+    color: $white;
+    padding: 0;
+    min-height: 600px;
+    overflow-x: hidden;
+    &:hover {
+        .firstanimation,
+        .secondanimation,
+        .thirdanimation,
+        .textin, 
+        .intwo,
+        .textinthree {
+            animation-play-state: paused;
+        }
+    }
+}
+
+//in case we have sidebar
+$sidebar-width: 300px;
+.row.has-sidebar {
+    @include breakpoint(large) {
+        padding-right: $sidebar-width;
+    }
+    .siteContent-body {
+        @include breakpoint(large) {
+            padding-right: $content-gutters*2;
+        }
+    }
+}
+.siteContent-body {
+    @include breakpoint(large) {
+        float: left;
+        width: 100%;
+        padding-right: 0;
+    }
+}
+.siteContent-side {
+    position: relative;
+    @include breakpoint(large) {
+        float: left;
+        width: $sidebar-width;
+        margin-left: -$sidebar-width;
+        left: $sidebar-width;
+    }
+}
+.siteSection-blue {
+    position: absolute;
+    background: $white;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+/*    top: 0;
+    bottom: 0;*/
+    /*right: -100%;*/
+/*    right: 0;
+    background: $blue;*/
+/*    transition: all .3s ease-in-out;*/
+/*    z-index: 0;*/
+    @include breakpoint (large) {
+        background: $blue;
+    }
+}
+.siteSection-red {
+    position: absolute;
+/*    top: 0;
+    bottom: 0;*/
+    /*right: -100%;*/
+    width: 100%;
+    top: 0;
+    bottom: 0;
+/*    right: 0;*/
+    background: $white;
+/*    transition: all .3s ease-in-out;*/
+/*    z-index: 0;*/
+    @include breakpoint (large) {
+        background: $orange;
+    }
+}
+.siteSection-green {
+    position: absolute;
+/*    top: 0;
+    bottom: 0;*/
+    /*right: -100%;*/
+    width: 100%;
+    top: 0;
+    bottom: 0;
+/*    right: 0;*/
+    background: $white;
+/*    transition: all .3s ease-in-out;*/
+/*    z-index: 0;*/
+    @include breakpoint (large) {
+        background: $green;
+    }
+}
+.siteSection-teaser {
+    position: relative;
+/*    &:hover {
+        .siteSection-red {
+            transform: translateX(-100%);
+        }
+        .laptop-red {
+            transform: translateX(-100%) skew(10deg);
+        }
+        .tablet-red {
+            transform: translateX(-100%);
+        }
+        .mobile-red {
+            transform: translateX(-100%);
+        }
+        .text-red {
+            transform: translateX(-100%);
+        }
+        .text {
+            left: 0;
+        }
+    }*/
+}
+.text-container {
+    @include breakpoint(large) {
+        overflow: hidden;
+        min-height: 600px;
+    }
+}
+.text,
+.text-red,
+.text-green {
+    position: absolute;
+    width: 100%;
+    top: 240px;
+    opacity: 0;
+    text-align: center;
+    height: 100px;
+    padding: 0 15px;
+    @include breakpoint(medium) {
+        top: 70px;
+    }
+    @include breakpoint(large) {
+        padding: 0;
+        width: 320px;        
+        top: 150px;
+        right: 0;
+        margin-right: 151px;
+        color: $white;
+        text-align: left;
+    }
+    p {
+        height: 100px;
+        @include breakpoint(large) {
+            height: 150px;
+        }
+    }
+}
+.text {
+    color: $blue;
+    @include breakpoint(large) {
+        color: $white;
+    }
+}
+.text-red {
+    color: $orange;
+    @include breakpoint(large) {
+        color: $white;
+    }
+}
+.text-green {
+    color: $green;
+    @include breakpoint(large) {
+        color: $white;
+    }
+}
+.firstanimation {
+    @include breakpoint(large) {
+         animation: cycle 15s linear infinite;
+    }
+}
+.secondanimation {
+    @include breakpoint(large) {
+        animation: cycletwo 15s linear infinite;
+    }
+}
+.thirdanimation {
+    @include breakpoint(large) {
+        animation: cyclethree 15s linear infinite;
+    }
+}
+.textin {
+   animation: fadein 15s linear infinite;
+}
+.textintwo {
+   animation: fadeintwo 15s linear infinite;
+}
+.textinthree {
+   animation: fadeinthree 15s linear infinite;
+}
+/*@keyframes cycle {
+   0%  { right: 0px; }
+   11.111%  { right: 0px; }
+   33.333% { right: 100%;  z-index: -1; }
+   33.334% { right: -100%;  z-index: -1;}
+   66.666% { right: -100%;  z-index: -1; }
+   100%{ right: 0px; }
+}
+@keyframes cycletwo {
+   0%  { right: -100%; }
+   33.333% { right: 0px;  }
+   44.444% { right: 0px;  }
+   66.666% { right: 100%;  z-index: 0; }
+   66.667% { right: -100%;  z-index: -1; }
+   100%{ right: -100%;  z-index: -1; }
+}
+@keyframes cyclethree {
+   0%  { right: -100%;  }
+   33.333% { right: -100%;  }
+   66.666% { right: 0px;  }
+   77.777% { right: 0px;  }
+   99.999% { right: 100%;  z-index: 0; }
+   100%{ right: -100%;  z-index: -1; }
+}*/
+@keyframes cycle {
+   0%  { opacity: 1; }
+   33.33333% { opacity: 1; }
+   44.33333% { opacity: 0;}
+   66.666% { opacity: 0; }
+   100%{ opacity: 0; }
+}
+@keyframes cycletwo {
+   0%  { opacity: 0; }
+   33.33333% { opacity: 0;  }
+   34.33333% { opacity: 1; }
+   66.66666% { opacity: 1; }
+   77.66666% { opacity: 0; }
+   100%{ opacity: 0; }
+}
+@keyframes cyclethree {
+   0%  { opacity: 0;  }
+   33.33333% { opacity: 0;  }
+   66.66666% { opacity: 0;  }
+   67.66666% { opacity: 1; }
+   99.999% { opacity: 1; }
+   100%{ opacity: 0; }
+}
+@keyframes fadein {
+   0%  { opacity: 0; }
+   11.111%  { opacity: 1; }
+   33.333% { opacity: 0; }
+   33.334% { opacity: 0;}
+   66.666% { opacity: 0; }
+   100%{ opacity: 0; }
+}
+@keyframes fadeintwo {
+   0%  { opacity: 0; }
+   33.333% { opacity: 0;  }
+   50.444% { opacity: 1;  }
+   66.666% { opacity: 0; }
+   66.667% { opacity: 0; }
+   100%{ opacity: 0; }
+}
+@keyframes fadeinthree {
+   0%  { opacity: 0;  }
+   33.333% { opacity: 0;  }
+   66.666% { opacity: 0;  }
+   77.777% { opacity: 1;  }
+   99.999% { opacity: 0; }
+   100%{ opacity: 0; }
+}
